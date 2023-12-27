@@ -8,10 +8,20 @@
 <body>
     <h1>Welcome to Pokemon World
     </h1>
+
+    <ul>
+        <% for (let i = 0; i < pokemon.length; i++){ %>
+        <li>
+            <%= pokemon[i].name %>
+            <a href="/pokemon/<%= i %>"><img src="<%= pokemon[i].img %>"></img></a>
+        </li>
+        <% } %>
+    </ul>
+
     <style>
         body {
             background-color: red;
-            color: black;
+            color: whitesmoke;;
         }
     </style>
 </body>

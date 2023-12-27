@@ -22,8 +22,9 @@ const app = express()
  */
 app.get('/pokemon', (req, res) => {
     // res.send(pokemon)
-    // res.render('index.ejs', {pokemon})
+    res.render('index.ejs', {pokemon})
 })
+
 /**
  * SERVER LISTENER - tells our app to listen for req on a certain port
  */
