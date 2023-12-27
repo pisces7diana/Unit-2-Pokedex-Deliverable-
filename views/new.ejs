@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Pokemon</title>
+    <%- include("./cssjs.ejs") %>
+</head>
+<body>
+    <h1>New Pokemon Page</h1>
+    <form action="/pokemon" method="post">
+        <label>What's it name? <input type="text" name="name"></label>
+        <label>Image: <input type="text" name="img"></label>
+        <label>Type: <input type="text" name="type[]"></label>
+        <label>Hit Points: <input type="text" name="stats[hp]"></label>
+        <label>Attack: <input type="text" name="stats[attack]"></label>
+        <label>Defense: <input type="text" name="stats[defense]"></label>
+        <input type="submit" value="Create New Pokemon">
+    </form>
+</body>
+</html>

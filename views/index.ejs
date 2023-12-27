@@ -4,16 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokedex</title>
+    <%- include('./cssjs.ejs') %>
 </head>
 <body>
     <h1>Welcome to Pokemon World
     </h1>
 
+    <nav>
+        <a href="/pokemon/new">Create a new Pokemon!</a>
+    </nav>
+
     <ul>
         <% for (let i = 0; i < pokemon.length; i++){ %>
         <li>
             <%= pokemon[i].name %>
-            <a href="/pokemon/<%= i %>"><img src="<%= pokemon[i].img %>"></img></a>
+            <a href='/pokemon/<%= i %>'><img src='<%= pokemon[i].img %>'></img></a>
         </li>
         <% } %>
     </ul>

@@ -14,9 +14,14 @@ const app = express()
  * MIDDLEWARE
  * Special Utilities that run before our routes
  */
+app.use(express.static("public"))
+app.use(express.urlencoded({extended: true}))
+
 /**
  * ROUTES - INDUCES
  */
+
+
 /**
  * Index
  */
@@ -26,13 +31,35 @@ app.get('/pokemon', (req, res) => {
 })
 
 /**
- * Show
+ * New
+ */
+app.get('/pokemon/new', (req, res) => {
+    res.render('new.ejs')
+})
+
+/**
+ * Create
+ */
+
+app.post('/pokemon', (req, res) => {
+    const body = req.body
+    res.send(body)
+})
+
+
+
+
+
+
+
+/**
+ * Show - always put last
  */
 app.get('/pokemon/:id', (req, res) => {
     const id = req.params.id
-    const onePokemon = pokemon[id]
-    // res.send(onePokemon)
-    res.render('show.ejs', {onePokemon})
+    const thePokemon = pokemon[id]
+    // res.send(thePokemon)
+    res.render('show.ejs', {thePokemon})
 })
 
 /**

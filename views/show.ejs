@@ -3,24 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>onePokemon</title>
+    <title>The Pokemon</title>
+    <%- include("./cssjs.ejs") %>
 </head>
 <body>
+    <h1>The Pokemon Show Page</h1>
+    <a href='/pokemon'>Back to Pokemon Index</a>
 
-    <a href='/pokemon'>Back to index</a>
-
-    <h1><%= onePokemon.name %></h1>
+    <h2><%= thePokemon.name %></h2>
     
-    <img src="<%= onePokemon.img %>"></img>
+    <img src='<%= thePokemon.img %>'></img>
 
-    <h2>Type</h2>
+    <h3>Type</h3>
     <ul>
-        <li><%= onePokemon.type%>
+        <li><%= thePokemon.type%>
     </ul>
 
-    <h2>Stats</h2>
-        <h3>HP</h3><%= onePokemon.stats.hp %>
-        <h3>Attack</h3><%= onePokemon.stats.attack %>
-        <h3>Defense</h3><%= onePokemon.stats.defense %>
+    <h3>Stats</h3>
+        <h4>Hit Points: <%= thePokemon.stats.hp %></h4>
+        <h4>Attack: <%= thePokemon.stats.attack %></h4>
+        <h4>Defense: <%= thePokemon.stats.defense %></h4>
+    </h3>
 </body>
 </html>
