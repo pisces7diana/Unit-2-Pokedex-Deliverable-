@@ -3,9 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>onePokemon</title>
 </head>
 <body>
-    <h1>All of your Pokemons</h1>
+
+    <a href='/pokemon'>Back to index</a>
+
+    <h1><%= onePokemon.name %></h1>
+    
+    <img src="<%= onePokemon.img %>"></img>
+
+    <h2>Type</h2>
+    <ul>
+        <li><%= onePokemon.type%>
+    </ul>
+
+    <h2>Stats</h2>
+        <h3>HP</h3><%= onePokemon.stats.hp %>
+        <h3>Attack</h3><%= onePokemon.stats.attack %>
+        <h3>Defense</h3><%= onePokemon.stats.defense %>
 </body>
 </html>

@@ -26,6 +26,16 @@ app.get('/pokemon', (req, res) => {
 })
 
 /**
+ * Show
+ */
+app.get('/pokemon/:id', (req, res) => {
+    const id = req.params.id
+    const onePokemon = pokemon[id]
+    // res.send(onePokemon)
+    res.render('show.ejs', {onePokemon})
+})
+
+/**
  * SERVER LISTENER - tells our app to listen for req on a certain port
  */
 app.listen(3000, () => {
