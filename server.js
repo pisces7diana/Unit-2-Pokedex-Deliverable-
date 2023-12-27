@@ -6,6 +6,13 @@ const express = require('express')
 const PORT= 3000
 // import the pokemon.js
 const pokemon = require('./models/pokemon.js')
+// import morgan
+const morgan = require('morgan')
+// import method override
+const methodOverride = require('method-override')
+
+
+
 /**
  * APPLICATION OBJECT - This is the center of our express universe
  */
@@ -16,6 +23,8 @@ const app = express()
  */
 app.use(express.static("public"))
 app.use(express.urlencoded({extended: true}))
+app.use(morgan('dev'))
+app.use(methodOverride("_method"))
 
 /**
  * ROUTES - INDUCES
@@ -40,10 +49,20 @@ app.get('/pokemon/new', (req, res) => {
 /**
  * Create
  */
-
 app.post('/pokemon', (req, res) => {
     const body = req.body
-    res.send(body)
+    // res.send(body)
+    pokemon.push(body)
+    res.redirect('/pokemon')
+})
+
+/**
+ * Delete
+ */
+app.delete('/pokemon/:id', (req, res) => {
+    const id = req.params.id
+    pokemon.splice(id, 1)
+    res.redirect('/pokemon')
 })
 
 

@@ -11,7 +11,7 @@
     </h1>
 
     <nav>
-        <a href="/pokemon/new">Create a new Pokemon!</a>
+        <a href="/pokemon/new">Caught a new Pokemon? Add here!</a>
     </nav>
 
     <ul>
@@ -20,6 +20,10 @@
             <%= pokemon[i].name %>
             <a href='/pokemon/<%= i %>'><img src='<%= pokemon[i].img %>'></img></a>
         </li>
+
+        <form action="/pokemon/<%= i %>?_method=DELETE" method="post">
+            <input type="submit" value="delete">
+        </form>
         <% } %>
     </ul>
 
