@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Update <%= thePokemon.name %></title>
+        <%- include("./cssjs.ejs") %>
+    </head>
+
+    <body>
+        <h1>Update <%= thePokemon.name %></h1>
+        
+        <form action="/pokemon/<%= id %>?_method=PUT" method="post">
+            <label>What's it name? <input type="text" name="name" value="<%= thePokemon.name %>"></label>
+            <label>Image: <input type="text" name="img" value="<%= thePokemon.img %>"></label>
+            <label>Type: <input type="text" name="type[]" value="<%= thePokemon.type %>"></label>
+            <label>Hit Points: <input type="text" name="stats[hp]" value="<%= thePokemon.stats.hp %>"></label>
+            <label>Attack: <input type="text" name="stats[attack]" value="<%= thePokemon.stats.attack %>"></label>
+            <label>Defense: <input type="text" name="stats[defense]" value="<%= thePokemon.stats.defense %>"></label>
+            
+            <input type="submit" value="Update <%= thePokemon.name %>">
+        </form>
+    </body>
+</html>

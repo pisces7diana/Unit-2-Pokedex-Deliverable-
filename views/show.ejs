@@ -7,8 +7,12 @@
     <%- include("./cssjs.ejs") %>
 </head>
 <body>
-    <h1>The Pokemon Show-off Page</h1>
+
     <a href='/pokemon'>Back to Pokemon Index</a>
+    
+    <h1>The Pokemon Show-off Page</h1>
+
+    <a href="/pokemon/<%= id %>/edit"><button>Edit</button></a>
 
     <h2><%= thePokemon.name %></h2>
     
