@@ -1,37 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokedex</title>
-    <%- include('./cssjs.ejs') %>
-</head>
-<body>
-    <h1>Welcome to Pokemon World
-    </h1>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pokedex</title>
+        <%- include('./cssjs.ejs') %>
+    </head>
+    <body>
+        <h1>Welcome to Pokemon World</h1>
 
-    <nav>
-        <a href="/pokemon/new">Caught a new Pokemon? Add here!</a>
-    </nav>
+        <nav>
+            <a href="/pokemon/new">Caught a new Pokemon? Add here!</a>
+        </nav>
 
-    <ul>
-        <% for (let i = 0; i < pokemon.length; i++){ %>
-        <li>
-            <%= pokemon[i].name %>
-            <a href='/pokemon/<%= i %>'><img src='<%= pokemon[i].img %>'></img></a>
-        </li>
+        <ul class="pokemon-grid">
+            <% for (let i = 0; i < pokemon.length; i++){ %>
+                <li class="pokemon-item">
+                    <%= pokemon[i].name %>
+                    <a href='/pokemon/<%= i %>'><img src='<%= pokemon[i].img %>'></img></a>
+               
 
-        <form action="/pokemon/<%= i %>?_method=DELETE" method="post">
-            <input type="submit" value="delete">
-        </form>
-        <% } %>
-    </ul>
+                    <form action="/pokemon/<%= i %>?_method=DELETE" method="post">
+                        <input type="submit" value="delete">
+                    </form>
+                </li>
+            <% } %>
+        </ul>
 
-    <style>
-        body {
-            background-color: red;
-            color: whitesmoke;;
-        }
-    </style>
-</body>
+        <style>
+
+            ul.pokemon-grid {
+                list-style: none;
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                gap: 20px;
+                margin-right: 40px;
+
+            }
+
+            li.pokemon-item {
+                text-align: center;
+            }
+
+            img {
+                width: 100%;
+                height: 200px;
+            }
+
+        </style>
+
+    </body>
 </html>

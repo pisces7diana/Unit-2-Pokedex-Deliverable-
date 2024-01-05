@@ -1,32 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Pokemon</title>
-    <%- include("./cssjs.ejs") %>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>The Pokemon</title>
+        <%- include("./cssjs.ejs") %>
+    </head>
 
-    <a href='/pokemon'>Back to Pokemon Index</a>
-    
-    <h1>The Pokemon Show-off Page</h1>
+    <body>
 
-    <a href="/pokemon/<%= id %>/edit"><button>Edit</button></a>
+        <a href='/pokemon'>Back to Pokemon Index</a>
 
-    <h2><%= thePokemon.name %></h2>
-    
-    <img src='<%= thePokemon.img %>'></img>
+        <h1>The Pokemon Show-off Page</h1>
 
-    <h3>Type</h3>
-    <ul>
-        <li><%= thePokemon.type%>
-    </ul>
+        <h2><%= thePokemon.name %></h2>
+        
+        <img src='<%= thePokemon.img %>'></img>
 
-    <h3>Stats</h3>
-        <h4>Hit Points: <%= thePokemon.stats.hp %></h4>
-        <h4>Attack: <%= thePokemon.stats.attack %></h4>
-        <h4>Defense: <%= thePokemon.stats.defense %></h4>
-    </h3>
-</body>
+        <h3>Type</h3>
+            <ul>
+                <li><%= thePokemon.type%>
+            </ul>
+
+        <h3>Stats</h3>
+            <h4>Hit Points: <%= thePokemon.stats.hp %></h4>
+            <h4>Attack: <%= thePokemon.stats.attack %></h4>
+            <h4>Defense: <%= thePokemon.stats.defense %></h4>
+        </h3>
+
+        <a href="/pokemon/<%= id %>/edit"><button>Edit</button></a>
+
+        <style>
+
+            img {
+                width: 250px;
+                height: 250px;
+            }
+        </style>
+    </body>
 </html>

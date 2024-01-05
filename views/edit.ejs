@@ -8,7 +8,7 @@
     </head>
 
     <body>
-        <h1>Update <%= thePokemon.name %></h1>
+        <h1>Edit Page for <%= thePokemon.name %></h1>
         
         <form action="/pokemon/<%= id %>?_method=PUT" method="post">
             <label>What's it name? <input type="text" name="name" value="<%= thePokemon.name %>"></label>
